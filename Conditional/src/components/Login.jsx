@@ -5,12 +5,12 @@ function Login(){
     return(
         <>
         <Input 
-            type = text
-            placeholder = Username
+            type = "text"
+            placeholder = "Username"
         />
         <Input 
-            type = password
-            placeholder = Password
+            type = "password"
+            placeholder = "Password"
         />
         <button type="submit"> Login</button>
         </>
