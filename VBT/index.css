@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #cfb5d0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+.heading_style{
+    padding: 30px 0;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: capitalize;
+    font-size: 13px;
+    letter-spacing:2px ;
+    font-weight: 500;
+    color: #1e1e1e;
+    background-color: #fff;
+    font-size: 4rem;
+    margin-bottom: 30px;
+}
+
+.slot_inner{
+    text-align: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    border: #ffffff 4px solid;
+    color: #000000;
+    font-family: 'Open Sans', sans-serif;
+
+    /* border-bottom: 1px; */
+    padding:12px;
+}
+
+.div_center{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 0.5%;
+}
+
+.btn {
+    
+    background: #c45dde;
+    background-image: -webkit-linear-gradient(top, #ccacd3, #3c2140);
+    background-image: -moz-linear-gradient(top, #928196, #3c2140);
+    background-image: -ms-linear-gradient(top, #bb89c7, #3c2140);
+    background-image: -o-linear-gradient(top, #c187d0, #3c2140);
+    background-image: linear-gradient(to bottom, #dd6ff8, #3c2140);
+    -webkit-border-radius: 19;
+    -moz-border-radius: 19;
+    border-radius: 19px;
+    font-family: 'Open Sans', sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 15px 30px 15px 30px;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    background: #db53db;
+    background-image: -webkit-linear-gradient(top, #db53db, #b62bd9);
+    background-image: -moz-linear-gradient(top, #db53db, #b62bd9);
+    background-image: -ms-linear-gradient(top, #db53db, #b62bd9);
+    background-image: -o-linear-gradient(top, #db53db, #b62bd9);
+    background-image: linear-gradient(to bottom, #db53db, #b62bd9);
+    text-decoration: none;
+  }

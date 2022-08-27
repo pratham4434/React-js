@@ -1,0 +1,546 @@
+// var React = require('react');
+//////////////////////////////////////////////////////////
+import React from 'react';
+// var ReactDOM = require('react-dom');
+import ReactDOM from "react-dom";
+
+// ReactDOM.render('kya dikhana hai', 'kaha dikhana hai','callback func')
+/*render method can only take one JSX element */
+ReactDOM.render(
+    /*we use either react.fragment yafir a div to wrap 
+    all the code as we know that the render method only 
+    takes one tag at a time */
+    <React.Fragment>
+        <p>Namaste World!!</p>
+        <h2>Ciao World!!</h2>
+        <h1>Hello World!!</h1>
+    </React.Fragment>,
+ document.getElementById("root")); 
+
+//////////////////////////////////////////////////////////
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+ReactDOM.render(
+    <React.Fragment>
+    <h1>Top IMDB Movies</h1>
+    <ol>
+        <li>The Shawshank Redemption</li>
+        <li>Godfather</li>
+        <li>The Dark Knight</li>
+        <li>Saving Private Ryan</li>
+        <li>Spirited Away</li>
+    </ol>
+    </React.Fragment>,
+    document.getElementById('root')
+);
+//////////////////////////////////////////////////////////
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+const flname = "Pratham Sharma";
+
+ReactDOM.render(
+    <React.Fragment>
+    /*use curly braces to use JS inside of JSX */
+    /*you can only use expressions inside of these 
+    curly braces bt you cannot use statements like if else */
+
+    <h1> My name is {flname} </h1>
+    <p>My lucky number is { 2+2 } </p>
+    <p>My lucky number is { Math.random() } </p>
+
+    </React.Fragment>,
+    document.getElementById('root')
+);
+//////////////////////////////////////////////////////////
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const fname = "Pratham";
+const lname = "Sharma";
+
+ReactDOM.render(
+    <React.Fragment>
+    // template literals
+    <h1> {`My name is ${fname} ${lname} `}</h1>
+    <p>My lucky number is { 2+2 } </p>
+    <p>My lucky number is { Math.random() } </p>
+
+    </React.Fragment>,
+    document.getElementById('root')
+);
+//////////////////////////////////////////////////////////
+// date and real time
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const currTime = new Date().toLocaleTimeString();
+
+const currDate = new Date().toLocaleDateString();
+const name = "Pratham";
+ReactDOM.render(
+    <React.Fragment>
+    <h1>Hello, my name is {name}</h1>
+    <p>Current Date is - {currDate}</p>
+    <p>Current time is - {currTime}</p>
+    </React.Fragment>,
+    document.getElementById("root")
+);
+////////////////////////////////////////////////////////////////
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const name = "Pratham";
+const img1 = "https://picsum.photos/200/300"
+const img2 = "https://picsum.photos/250/300"
+const img3 = "https://picsum.photos/300/300"
+
+
+ReactDOM.render(
+    <>
+     <h1 contentEditable = "true">My name is {name}</h1>   
+     <img alt = "RandomImage" src ={img1}/>
+     <img alt = "RandomImage" src ={img2}/>
+     <a href='https://www.google.com/'>
+     <img alt = "RandomImage" src ={img3}/>
+     </a>
+    </>,
+    document.getElementById('root')
+)
+///////////////////////////////////////////////////////////////////
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css'
+
+const name = "Pratham";
+const img1 = "https://picsum.photos/200/300"
+const img2 = "https://picsum.photos/250/300"
+const img3 = "https://picsum.photos/300/300"
+
+
+ReactDOM.render(
+    <>
+     <h1 className = "heading" contentEditable = "true">My name is {name}</h1>   
+     <div className='image_div'>
+        <img alt = "RandomImage" src ={img1}/>
+        <img alt = "RandomImage" src ={img2}/>
+        <a href='https://www.google.com/'>
+        <img alt = "RandomImage" src ={img3}/>
+        </a>
+     </div>
+    </>,
+    document.getElementById('root')
+) 
+///////////////////////////////////////////////////////////////////
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css'
+
+const name = "Pratham";
+const img1 = "https://picsum.photos/200/300"
+const img2 = "https://picsum.photos/250/300"
+const img3 = "https://picsum.photos/300/300"
+
+/*- We can define an object to apply inline css  
+  - 2 curly braces would appear as there would 
+    be one extra from object and the other one for JSX*/
+
+const heading = {
+    color: '#fa9191',
+    textTransform: 'capitalize',
+    textAlign: 'center',
+    fontWeight: 'Bold',
+    textShadow: '0px 2px 4px #ffe9c5',
+    margin: '70px 0',
+    fontFamily: '"Open Sans", sans-serif'
+};
+
+ReactDOM.render(
+    <>
+     <h1 style = {heading} className = "heading" contentEditable = "true">My name is {name}</h1>   
+     <div className='image_div'>
+        <img alt = "RandomImage" src ={img1}/>
+        <img alt = "RandomImage" src ={img2}/>
+        <a href='https://www.google.com/'>
+        <img alt = "RandomImage" src ={img3}/>
+        </a>
+     </div>
+    </>,
+    document.getElementById('root')
+)  
+///////////////////////////////////////////////////////////////////
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+
+
+let currDate = new Date(2022, 5, 5, 6);
+currDate = currDate.getHours();
+let greeting = " ";
+let cssStyle = {};
+
+if (currDate >= 1 && currDate < 12){
+    greeting = "Good Morning";
+    cssStyle.color = "green";
+}else if (currDate <= 12 && currDate < 19){
+    greeting = "Good Afternoon";
+    cssStyle.color = "orange";
+}else {
+    greeting = "Good Night";
+    cssStyle.color = "pink";
+}
+
+ReactDOM.render(
+    <>
+    <div className="div_greeting">
+    <h1>Hello Sir, <span style={ cssStyle}>{greeting}!</span></h1>
+    </div>
+    </>
+    ,document.getElementById("root")
+    );
+///////////////////////////////////////////////////////////////////
+
+calculator
+import React from "react";
+import  ReactDOM  from "react-dom";
+import {add, sub, div, mul} from "./App"
+
+ReactDOM.render(
+    <>
+     
+        <ul>
+            <li>{add(12,3)}</li>
+            <li>{sub(12,3)}</li>
+            <li>{div(12,3)}</li>
+            <li>{mul(12,3)}</li>
+        </ul>
+    </>
+    ,document.getElementById("root"));
+
+    import React from "react";
+ // app.js wala part
+function add(a,b) {
+    let sum = a + b;
+    return sum; 
+}
+
+function sub(a,b) {
+    let sum = a - b;
+    return sum; 
+}
+
+function div(a,b) {
+    let sum = a / b;
+    return sum.toFixed(2); 
+}
+
+function mul(a,b) {
+    let sum = a * b;
+    return sum; 
+}
+
+export {add, sub, div, mul};
+
+///////////////////////////////////////////////////////////////////
+import React from "react";
+import  ReactDOM  from "react-dom";
+import Card from "./Cards"
+// import Sdata from "./Sdata";
+import "./index.css";
+
+
+ReactDOM.render(
+    <>
+    <h1 className="heading_style">List of top 5 Netflix Series in 2020</h1>
+    <Card 
+        imgsrc ="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2020/04/23/903342-netflix-dark.jpg"
+        title ="A Netflix Original Series"
+        sname ="DARK"
+        link ="https://www.imdb.com/title/tt5753856/"
+    />
+
+        // array map
+        // array.map(function(val,index,arr),thisValue)
+        
+    {/* <Card 
+        imgsrc ="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2020/04/23/903342-netflix-dark.jpg"
+        title ="A Netflix Original Series"
+        sname ="DARK"
+        link ="https://www.imdb.com/title/tt5753856/"
+    />
+
+    <Card 
+        imgsrc ="https://cdn.dnaindia.com/sites/default/files/styles/full/public/2020/04/23/903342-netflix-dark.jpg"
+        title ="A Netflix Original Series"
+        sname ="DARK"
+        link ="https://www.imdb.com/title/tt5753856/"
+    /> */}
+    </>
+    ,document.getElementById("root"));
+
+
+    ------------------ cards component
+    import React from "react";
+
+function Card(props){
+    return(
+    <div className ="cards">
+    <div className ="card">
+        <img src={props.imgsrc} alt="myPic" className="card__img" />
+        <div className ="card-_info">
+            <span className="card__category">{props.title}</span>
+            <h3 className="card__title">{props.sname}</h3>
+            <a href={props.link} target="_blank">
+                <button>Watch Now</button>
+            </a>
+        </div>
+    </div>
+ </div>);
+}
+
+export default Card;
+///////////////////////////////////////////////////////////////////
+//react hooks
+
+import React, { useState } from "react";
+
+
+const App = () => {
+        const [count, setCount] = useState(0);
+   
+
+    
+    const IncNum = () => {
+        return(
+            setCount(count + 1)
+            
+        );
+    };
+
+    return(
+        <>
+        <h1>{count}</h1>
+           <button onClick = {IncNum} className = "btn">Click Me</button>
+        </>
+    );
+};
+
+export default App; 
+///////////////////////////////////////////////////////////////////
+// app.js wala part of the clock stopwatch
+
+
+import React, { useState } from "react";
+
+const App = () => {
+    let nowTime = new Date().toLocaleTimeString();
+    const [cTime, setCtime] = useState(nowTime);
+   
+
+    
+    const UpdateTime = () => {
+         nowTime = new Date().toLocaleTimeString();
+         setCtime(nowTime);
+    };
+
+    return(
+        <>
+        <h1>{cTime}</h1>
+           <button onClick={UpdateTime} className = "btn">Get Time</button>
+        </>
+    );
+};
+
+export default App; 
+///////////////////////////////////////////////////////////////////
+//digital clock
+
+import React, { useState } from "react";
+
+const App = ()  =>  {
+    let time = new Date().toLocaleTimeString();
+
+    const [cTime, setCtime] = useState(time);
+
+    const UpdateTime = () => {
+        time = new Date().toLocaleTimeString();
+        setCtime(time);
+    };
+
+    setInterval(UpdateTime,1000);
+    return(
+        <>
+            <h1 className="heading_style">{cTime}</h1>
+        </>
+    );
+};
+
+export default App;
+color flipper
+
+import React, { useState } from "react";
+
+const App = () => {
+
+    const purple = "#8e44ad";
+    const [bg,setBg] = useState(purple);
+    const [name,setName] = useState("Click Me");
+
+
+    const bgChange = () => {
+        let newBg = "#34495e";
+        setBg(newBg);    
+        setName("Clicked");
+    };
+
+    const bgBack = () => {
+        setBg(purple);    
+        setName("Clickeded");
+    };
+
+    return(
+    <>
+        <div style = {{backgroundColor: bg}}>
+            <button  onClick ={bgChange} onDoubleClick = {bgBack} className="btn"> {name}</button>
+        </div>
+    </>
+    );
+};
+
+export default App;
+///////////////////////////////////////////////////////////////////
+
+App.js
+controlled and uncontrolled compo. (forms)
+import React, { useState } from "react";
+
+const App = () => {
+
+    const [name, setName] = useState();
+    const [fullName, setFullName] = useState();
+
+    const inputEvent = (event) => {
+        console.log(event.target.value);
+        setName(event.target.value);
+
+    };
+
+    const onSubmit =() => {
+        setFullName(name);
+
+    };
+
+    return(
+        <>
+        <h1 className="heading_style">
+            Hello {fullName}
+        </h1>
+        <div className="div_center">
+            <input className="slot_inner" onChange={inputEvent} type="text" placeholder="Enter Your Name" value={name}/>
+        </div>
+        <div className="div_center">
+            <button className="btn" onClick={onSubmit}>Click Me</button>
+        </div>
+        </>
+    );
+};
+
+export default App;
+///////////////////////////////////////////////////////////////////
+form 2
+
+import React, { useState } from "react";
+
+const App = () => {
+
+    const [fname, setFName] = useState();
+    const [lname, setLName] = useState();
+
+    const [fullName, setFullName] = useState();
+
+    const inputEventOne = (event) => {
+        setFName(event.target.value);
+    };
+
+    const inputEventTwo = (event) => {
+        setLName(event.target.value);
+    };
+
+
+
+    const onSubmit =() => {
+        setFullName(fname +" "+ lname);
+
+    };
+
+    return(
+        <>
+        <h1 className="heading_style">
+            Hello {fullName}
+        </h1>
+        <div className="div_center">
+            <input className="slot_inner" onChange={inputEventOne} type="text" placeholder="Enter Your First Name" value={fname}/>
+        </div>
+        <div className="div_center">
+            <input className="slot_inner" onChange={inputEventTwo} type="text" placeholder="Enter Your Last Name" value={lname}/>
+        </div>
+        <div className="div_center">
+            <button className="btn" onClick={onSubmit}>Click Me</button>
+        </div>
+        </>
+    );
+};
+
+export default App;
+///////////////////////////////////////////////////////////////////
+form tag used 
+
+import React, { useState } from "react";
+
+const App = () => {
+
+    const [fname, setFName] = useState();
+    const [lname, setLName] = useState();
+
+    const [fullName, setFullName] = useState();
+
+    const inputEventOne = (event) => {
+        setFName(event.target.value);
+    };
+
+    const inputEventTwo = (event) => {
+        setLName(event.target.value);
+       };
+
+
+
+    const onSubmit = (event) => {
+        setFullName(fname +" "+ lname);
+        event.preventDefault();
+
+    };
+
+    return(
+        <>
+        <form>
+        <h1 className="heading_style">
+            Hello {fullName}
+        </h1>
+        <div className="div_center">
+            <input className="slot_inner" onChange={inputEventOne} type="text" placeholder="Enter Your First Name" value={fname}/>
+        </div>
+        <div className="div_center">
+            <input className="slot_inner" onChange={inputEventTwo} type="text" placeholder="Enter Your Last Name" value={lname}/>
+        </div>
+        <div className="div_center">
+            <button className="btn" onClick={onSubmit}>Click Me</button>
+        </div>
+        </form>
+        </>
+    );
+};
+
+export default App;
+///////////////////////////////////////////////////////////////////
